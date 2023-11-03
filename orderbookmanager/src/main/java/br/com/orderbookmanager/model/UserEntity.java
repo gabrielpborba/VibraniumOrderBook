@@ -1,6 +1,5 @@
 package br.com.orderbookmanager.model;
 
-
 import br.com.orderbookmanager.dto.UserDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +8,6 @@ import jakarta.persistence.Id;
 
 @Entity(name="user_entity")
 public class UserEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long  id;

@@ -2,7 +2,6 @@ package br.com.orderbookmanager.component;
 
 import br.com.orderbookmanager.dto.OrderDto;
 import br.com.orderbookmanager.model.OrderEntity;
-import br.com.orderbookmanager.repository.OrderRepository;
 import br.com.orderbookmanager.service.OrderService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,7 +19,6 @@ public class OrderQueueConsumer {
 
     @Autowired
     private OrderService orderService;
-
 
     @RabbitListener(queues = {"${rabbitmq.order-queue.name}"})
     public void consume(String message) {

@@ -14,9 +14,7 @@ public class OrderEntity {
     private OrderType type;
     private double price;
     private int quantity;
-
     private Instant instant;
-
     private boolean available;
 
     @ManyToOne
