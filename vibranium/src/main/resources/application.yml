@@ -1,0 +1,55 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /vibranium
+
+spring.datasource:
+  url: jdbc:postgresql://localhost:5432/vibranium
+  username: postgres
+  password: password
+  driver-class-name: org.postgresql.Driver
+
+spring.jpa:
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+  hibernate:
+    ddl-auto: update
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      endpoint:
+        prometheus:
+          enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoint:
+    prometheus:
+      path: /actuator/prometheus
+    metrics:
+      enabled: true
+
+rabbitmq:
+  order-queue:
+    name: order-queue
+  order-exchange:
+    name: order-exchange
+  order- routing:
+    key: order-routing-key
+
+  user-queue:
+    name: user-queue
+  user-exchange:
+    name: user-exchange
+  user-routing:
+    key: user-routing-key
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
