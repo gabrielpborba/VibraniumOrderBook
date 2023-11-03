@@ -32,7 +32,6 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private UserService userService;
 
-
     public void create(OrderEntity orderEntity) throws JsonProcessingException {
         double orderValue = orderEntity.getQuantity() * orderEntity.getPrice();
         UserEntity user = getUser(orderEntity.getUser().getId());

@@ -21,7 +21,6 @@ public class UserEntity {
     public UserEntity() {
     }
 
-
     public UserEntity( Long id, String name, double amount, int quantity) {
         this.id = id;
         this.name = name;

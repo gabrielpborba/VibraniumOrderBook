@@ -1,11 +1,9 @@
 package br.com.vibraniumapi.model;
 
-
 import br.com.vibraniumapi.dto.UserDto;
 import jakarta.persistence.*;
 
 import java.time.Instant;
-
 
 @Entity(name="order_entity")
 public class OrderEntity {
@@ -25,10 +23,8 @@ public class OrderEntity {
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
-
     public OrderEntity() {
     }
-
 
     public OrderEntity(OrderType type, double price, int quantity, UserDto userDto) {
         this.type = type;

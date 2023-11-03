@@ -5,9 +5,7 @@ import java.util.Locale;
 
 public class InsufficientBalanceException extends RuntimeException {
 
-
     private final String insufficient;
-
 
     public InsufficientBalanceException(double userAmount, double orderTotalPrice) {
 
@@ -17,7 +15,6 @@ public class InsufficientBalanceException extends RuntimeException {
         String orderValue = currencyFormatter.format(orderTotalPrice);
         insufficient = String.format("Insufficient balance. User balance: %s, Order value: %s", amount, orderValue);
     }
-
     @Override
     public String getMessage() {
         return insufficient;
