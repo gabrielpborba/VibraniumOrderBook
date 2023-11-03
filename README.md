@@ -20,10 +20,10 @@ git clone [https://github.com/yourusername/vibranium-orderbook.git](https://gith
 
 ### Run Docker Compose
 After cloning the repository, navigate to the project's root directory and run the Docker Compose using the provided docker-compose.yml file:
-
+```
 cd VibraniumOrderBook
 docker-compose up
-
+```
 This will set up the required infrastructure, including RabbitMQ, PostgreSQL, orderbookmanager, trademanager and vibraniumAPI.
 
 ### User Management
