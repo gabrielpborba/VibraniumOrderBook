@@ -1,6 +1,6 @@
 # Vibranium OrderBook Project
 
-👋 Welcome to the Vibranium OrderBook project! This project provides a  order matching and trading system for Vibranium, an API designed for user management and order creation. The core components of this system include OrderBookManager and TradeManager. Additionally, RabbitMQ is used to manage queues (`order-queue`, `trade-queue`, `user-queue`), and PostgreSQL is employed as the backend database for storing data.
+👋 Welcome to the Vibranium OrderBook project! This project provides a  order matching and trading system for Vibranium, an API designed for user management and order creation. The core components of this system include OrderBookManager and TradeManager. Additionally, RabbitMQ is used to manage queues (`order-queue`, `trade-queue`, `user-queue`), and PostgreSQL is employed as the backend database for storing and reading data.
 
 ## Getting Started
 
@@ -26,11 +26,13 @@ You can create a user by making a POST request to the following endpoint:
 Endpoint: http:localhost:8080/vibranium/user
 #### POST
 Example Request:
+```
 {
     "name": "Joaozinho",
     "amount": 10000,
     "quantity": 321
 }
+```
 
 ### Order Creation
 To create an order, make a POST request to the following endpoint:
@@ -38,6 +40,7 @@ To create an order, make a POST request to the following endpoint:
 Endpoint: http:localhost:8080/vibranium/order
 #### POST
 Example Request:
+```
 {
   "type": "BUY",
   "price": 103,
@@ -46,6 +49,7 @@ Example Request:
     "id": 2
   }
 }
+```
 
 ###  Real-time Order Dashboard
 You can visualize real-time order data by opening the following endpoint in your web browser:
