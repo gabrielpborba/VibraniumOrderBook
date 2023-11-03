@@ -3,18 +3,54 @@
 <head>
     <title>Order Book</title>
     <style>
+        /* Estilo para o título h1 */
+        h1 {
+            text-align: center;
+        }
+
+        /* Estilo para os contêineres das tabelas */
         .table-container {
             display: flex;
+            justify-content: space-around; /* Centraliza as tabelas horizontalmente */
         }
+
+        /* Estilo para as tabelas */
         .table {
-            margin-right: 20px; /* Espaço entre as tabelas */
+            width: 45%; /* Largura das tabelas */
+            margin: 0 10px; /* Espaço entre as tabelas */
+            border: 1px solid #ccc; /* Borda ao redor das tabelas */
+            padding: 10px;
+        }
+
+        /* Estilo para os títulos das tabelas h2 */
+        .table h2 {
+            text-align: center;
+            background-color: #f0f0f0; /* Cor de fundo */
+            padding: 5px;
+        }
+
+        /* Estilo para as tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Estilo para as células do cabeçalho da tabela */
+        th {
+            background-color: #333;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Estilo para as células da tabela */
+        td {
+            border: 1px solid #ccc;
+            padding: 5px;
         }
     </style>
 </head>
 <body>
 <h1>Order Book</h1>
-
-
 
 <div class="table-container">
     <div class="table">
