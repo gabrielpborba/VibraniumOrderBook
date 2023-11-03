@@ -1,6 +1,7 @@
-package br.com.orderbookmanager.model;
+package br.com.vibraniumapi.model;
 
-import br.com.orderbookmanager.dto.UserDto;
+
+import br.com.vibraniumapi.dto.UserDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,6 +9,7 @@ import jakarta.persistence.Id;
 
 @Entity(name="user_entity")
 public class UserEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long  id;
@@ -19,15 +21,16 @@ public class UserEntity {
     public UserEntity() {
     }
 
-    public UserEntity(UserDto userDto) {
-        this.id = userDto.getId();
-    }
-
-    public UserEntity(Long id, String name, double amount, int quantity) {
+    public UserEntity( Long id, String name, double amount, int quantity) {
         this.id = id;
         this.name = name;
         this.amount = amount;
         this.quantity = quantity;
+    }
+
+    public UserDto toUserDto() {
+        return new UserDto(this.id, this.name, this.amount, this.quantity);
+
     }
 
     public Long getId() {

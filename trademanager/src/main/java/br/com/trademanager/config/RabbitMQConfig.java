@@ -17,19 +17,16 @@ public class RabbitMQConfig {
     @Value("${rabbitmq.trade-routing.key}")
     private String routingKey;
 
-    // spring bean for rabbitmq queue
     @Bean
     public Queue queue(){
         return new Queue(queue);
     }
 
-    // spring bean for rabbitmq exchange
     @Bean
     public DirectExchange exchange(){
         return new DirectExchange(exchange);
     }
 
-    // binding between queue and exchange using routing key
     @Bean
     public Binding binding(){
         return BindingBuilder

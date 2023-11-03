@@ -1,6 +1,6 @@
-package br.com.orderbookmanager.model;
+package br.com.vibraniumapi.model;
 
-
+import br.com.vibraniumapi.dto.UserDto;
 import jakarta.persistence.*;
 
 import java.time.Instant;
@@ -14,23 +14,23 @@ public class OrderEntity {
     private OrderType type;
     private double price;
     private int quantity;
+
     private Instant instant;
+
     private boolean available;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
-
     public OrderEntity() {
     }
 
-    public OrderEntity(OrderType type, double price, int quantity, UserEntity user, Instant instant) {
+    public OrderEntity(OrderType type, double price, int quantity, UserDto userDto) {
         this.type = type;
         this.price = price;
         this.quantity = quantity;
-        this.user = user;
-        this.instant = instant;
+        this.user =  userDto.toUserEntity();
     }
 
     public Long getId() {

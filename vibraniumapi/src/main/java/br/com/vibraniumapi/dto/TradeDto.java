@@ -1,30 +1,18 @@
-package br.com.orderbookmanager.model;
+package br.com.vibraniumapi.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
-@Entity(name="trade_entity")
-public class TradeEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.time.Instant;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class TradeDto {
     private Long id;
     private long idBuyer ;
     private long idSeller;
     private double price;
     private int quantity;
-
-
-    public TradeEntity() {
-    }
-
-    public TradeEntity(long idBuyer, long idSeller, double price, int quantity) {
-        this.idBuyer = idBuyer;
-        this.idSeller = idSeller;
-        this.price = price;
-        this.quantity = quantity;
-    }
+    private Instant instant;
 
     public Long getId() {
         return id;
@@ -64,5 +52,13 @@ public class TradeEntity {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public Instant getInstant() {
+        return instant;
+    }
+
+    public void setInstant(Instant instant) {
+        this.instant = instant;
     }
 }
