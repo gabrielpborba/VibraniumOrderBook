@@ -1,0 +1,43 @@
+spring.datasource:
+  url: jdbc:postgresql://localhost:5432/vibranium
+  username: postgres
+  password: password
+  driver-class-name: org.postgresql.Driver
+
+spring.jpa:
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+  hibernate:
+    ddl-auto: update
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  servlet:
+    context-path: /vibranium
+  port: 8081
+
+rabbitmq:
+  trade-queue:
+    name: trade-queue
+  trade-exchange:
+    name: trade-exchange
+  trade-routing:
+    key: trade-routing_key
+
+  user-queue:
+    name: user-queue
+  user-exchange:
+    name: user-exchange
+  user-routing:
+    key: user-routing-key
+
+
+spring.rabbitmq:
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
