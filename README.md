@@ -3,6 +3,11 @@
 👋 Welcome to the Vibranium OrderBook project! This project provides a  order matching and trading system for Vibranium.
 The core components of this system include OrderBookManager, TradeManager and VibraniumAPI. Additionally, RabbitMQ is used to manage queues (`order-queue`, `trade-queue`, `user-queue`), and PostgreSQL is employed as the backend database for storing and reading data.
 
+
+##
+Architecture
+
+![Architecture](https://github.com/gabrielpborba/VibraniumOrderBook/blob/release/1.0.0/vibranium.jpg)
 ## Getting Started
 
 To get started with this project, follow these steps:
