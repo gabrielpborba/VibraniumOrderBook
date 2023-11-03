@@ -65,12 +65,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private OrderMessageDto createOrderMessageDto(OrderEntity orderEntity) {
-        ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
         return new OrderMessageDto(orderEntity);
     }
 
     private String convertOrderMessageDtoToString(OrderMessageDto orderMessageDTO) throws JsonProcessingException {
-        return new ObjectMapper().writeValueAsString(orderMessageDTO);
+        ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
+        return objectMapper.writeValueAsString(orderMessageDTO);
     }
 }
 
