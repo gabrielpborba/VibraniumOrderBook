@@ -27,12 +27,12 @@ services:
   orderbookmanager:
     image: orderbookmanager
     build:
-      context: .
+      context: /orderbookmanager
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
     volumes:
-      - /target/*.jar orderbookmanager.jar
+      - /orderbookmanager/target/*.jar orderbookmanager.jar
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
@@ -44,12 +44,12 @@ services:
   trademanager:
     image: trademanager
     build:
-      context: ../trade
+      context: /trademanager
       dockerfile: Dockerfile
     ports:
       - "9091:9091"
     volumes:
-      - /target/*.jar trademanager.jar
+      - /trademanager/target/*.jar trademanager.jar
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
@@ -61,12 +61,12 @@ services:
   vibraniumapi:
     image: vibraniumapi
     build:
-      context: ../users
+      context: /vibraniumapi
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     volumes:
-      - /target/*.jar vibraniumapi.jar
+      - /users/target/*.jar vibraniumapi.jar
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
