@@ -28,7 +28,7 @@ public class OrderQueueProducer {
             rabbitTemplate.convertAndSend(exchange, routingKey, message);
             logger.info("Message Sent to order-queue: ".concat(message));
         }catch (Exception e){
-            logger.error("Failed to send messa to order-queue ". concat(message));
+            logger.error("Failed to send message to order-queue ". concat(message));
         }
 
     }

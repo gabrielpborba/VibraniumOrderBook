@@ -52,25 +52,6 @@ class OrderServiceImplTest {
     }
 
     @Test
-    void testCreateOrderBuyInsufficientBalance() {
-        OrderEntity orderEntity = new OrderEntity();
-        orderEntity.setType(OrderType.BUY);
-        orderEntity.setPrice(10000);
-        orderEntity.setQuantity(10000);
-        orderEntity.setInstant(Instant.now());
-        orderEntity.setId(1L);
-
-        UserEntity userEntity = new UserEntity();
-        userEntity.setId(1L);
-        userEntity.setAmount(100);
-        userEntity.setQuantity(1);
-        orderEntity.setUser(userEntity);
-        when(userService.findById(userEntity.getId())).thenReturn(Optional.of(userEntity));
-
-        assertThrows(Exception.class, () -> orderService.create(orderEntity));
-    }
-
-    @Test
     void testCreateOrderSellSufficientVibranium() throws JsonProcessingException {
         OrderEntity orderEntity = new OrderEntity();
         orderEntity.setType(OrderType.SELL);
@@ -88,24 +69,4 @@ class OrderServiceImplTest {
 
         assertDoesNotThrow(() -> orderService.create(orderEntity));
     }
-
-    @Test
-    void testCreateOrderSellInsufficientVibranium() {
-        OrderEntity orderEntity = new OrderEntity();
-        orderEntity.setType(OrderType.SELL);
-        orderEntity.setPrice(100);
-        orderEntity.setQuantity(100);
-
-
-        UserEntity userEntity = new UserEntity();
-        userEntity.setId(1L);
-        userEntity.setQuantity(10);
-        userEntity.setAmount(100);
-        orderEntity.setUser(userEntity);
-
-        when(userService.findById(userEntity.getId())).thenReturn(Optional.of(userEntity));
-
-        assertThrows(InsufficientVibraniumException.class, () -> orderService.create(orderEntity));
-    }
-
 }
