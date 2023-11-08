@@ -48,6 +48,7 @@ To create an order, make a POST request to the following endpoint:
 [http:localhost:8080/vibranium/order](http:localhost:8080/vibranium/order)
 #### POST
 Example Request:
+Use BUY or SELL for Type 
 ```
 {
   "type": "BUY",
