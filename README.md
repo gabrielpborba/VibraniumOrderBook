@@ -44,7 +44,7 @@ Example Request:
 ### Order Creation
 To create an order, make a POST request to the following endpoint:
 
-####Endpoint: 
+#### Endpoint: 
 [http:localhost:8080/vibranium/order](http:localhost:8080/vibranium/order)
 #### POST
 Example Request:
