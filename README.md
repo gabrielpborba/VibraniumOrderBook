@@ -7,7 +7,7 @@ The core components of this system include OrderBookManager, TradeManager and Vi
 ##
 Architecture
 
-![Architecture](https://github.com/gabrielpborba/VibraniumOrderBook/blob/release/1.0.0/vibranium.jpg)
+![Architecture](https://github.com/gabrielpborba/VibraniumOrderBook/blob/main/vibranium.png)
 ## Getting Started
 
 To get started with this project, follow these steps:
