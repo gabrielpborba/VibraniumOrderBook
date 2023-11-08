@@ -18,7 +18,7 @@ management:
 server:
   servlet:
     context-path: /vibranium
-  port: 9091
+  port: 8081
 
 rabbitmq:
   trade-queue:
@@ -26,7 +26,7 @@ rabbitmq:
   trade-exchange:
     name: trade-exchange
   trade-routing:
-    key: trade-routing_key
+    key: trade-routing-key
 
   user-queue:
     name: user-queue
